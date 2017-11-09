@@ -7,7 +7,4 @@
         <!--<property name="pname" value="lichangtong"/>-->
     <!--</bean>-->
     <bean class="net.test.extents.TestFourClass"/>
-    <!--<bean class="net.test.extents.TestFourClass"/>-->
-    <!--<bean class="net.test.extents.TestFourClass"/>-->
-    <!--<bean class="net.test.extents.TestFourClass"/>-->
 </beans>
