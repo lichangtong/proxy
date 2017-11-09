@@ -1,0 +1,111 @@
+1,git reset --hard commit_id 
+eg：
+   git reset --hard c613a9ac36723a8ed4a830734733335cef4980a3
+
+
+2,暂存 – git add
+eg：
+ 只有一个文件
+ git add hello.txt
+
+ 需要提交目录下的所有内容
+ git add -A
+
+
+
+3， 检查状态 – git status
+    非常重要的命令，它会告诉我们创库的当前状态：是否为最新代码，有什么更新等等
+
+4，提交 – git commit
+eg:
+git commit -m "Initial commit."
+
+5, 链接远端仓库 git remote add
+
+git remote add origin https://github.com/tutorialzine/awesome-project.git
+一个项目可以同时拥有好几个远端仓库为了能够区分，通常会起不同的名字。通常主远端仓库被称为origin。
+
+6, 上传到服务器 – git push 
+git push命令会有两个参数，远端仓库的名字，以及分支的名字
+
+eg:
+git push origin master
+
+
+7,克隆仓库 – git clone 
+本地也会创建一个新的仓库，并自动将github上的分支设为远端分支。
+eg：
+git clone https://github.com/tutorialzine/awesome-project.git
+
+8,从服务器上拉取代码 – git pull 
+如果你更新了代码到仓库上，其他人可以通过git pull命令拉取你的变动
+eg:
+git pull origin master
+
+9,创建新分支 – git branch 
+每一个仓库的默认分支都叫master, 创建新分支可以这样
+创建了一个名为amazing_new_feature的新分支，它跟当前分支同一起点
+eg:
+git branch amazing_new_feature
+
+10,切换分支 – git checkout 
+单独使用git branch，可以查看分支状态：
+* 号表示当前活跃分支为master，使用git checkout切换分支
+eg:
+git branch
+
+result:
+  amazing_new_feature
+* master
+
+11,切换分支 – git checkout
+
+eg：
+git checkout amazing_new_feature
+
+
+12，合并分支 – git merge
+
+我们的 amazing_new_feature 分支的任务是增加一个featuer.txt。我们来创建，添加到暂存区，提交。
+
+$ git add feature.txt
+$ git commit -m "New feature complete."
+
+新分支任务完成了，回到master分支
+
+$ git checkout master
+合并：
+eg:
+git merge amazing_new_feature
+
+
+删除分支：
+git branch -d amazing_new_feature
+
+13， git log 每次提交都有一个唯一id，查看所有提交和他们的id，可以使用 git log
+
+14，查看某一次提交更新了什么，使用 git show:
+eg:
+git show commit_id
+
+15: 查看两次提交的不同，可以使用git diff [commit-from]..[commit-to] 语法
+eg:
+git diff 09bd8cc..ba25c0ff
+
+
+16,
+回滚某个文件到之前的版本
+git 允许我们将某个特定的文件回滚到特定的提交，使用的也是 git checkout
+eg： git checkout commit_id 【文件】
+git checkout 09bd8cc1 hello.txt
+
+17，git revert HEAD 回滚提交
+
+混滚提交时，发生冲突是非常频繁的。当文件被后面的提交修改了以后，git不能正确回滚
+
+最新的一次提交别名也叫HEAD 
+eg:
+git revert HEAD
+
+其他提交可以使用commit_id
+git revert b10cc123
