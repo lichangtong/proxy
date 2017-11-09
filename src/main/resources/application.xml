@@ -2,8 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean class="net.init.bean.People">
-        <property name="pid" value="10001"/>
-        <property name="pname" value="lichangtong"/>
-    </bean>
+    <!--<bean class="net.init.bean.People">-->
+        <!--<property name="pid" value="10001"/>-->
+        <!--<property name="pname" value="lichangtong"/>-->
+    <!--</bean>-->
+    <bean class="net.test.extents.TestFourClass"/>
+    <bean class="net.test.extents.TestFourClass"/>
+    <bean class="net.test.extents.TestFourClass"/>
+    <bean class="net.test.extents.TestFourClass"/>
 </beans>
