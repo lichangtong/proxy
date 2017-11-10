@@ -6,6 +6,7 @@
         <!--<property name="pid" value="10001"/>-->
         <!--<property name="pname" value="lichangtong"/>-->
     <!--</bean>-->
+    <bean class="net.init.bean.People"/>
     <bean class="net.test.extents.TestFourClass"/>
     <!--<bean class="net.test.extents.TestFourClass"/>-->
     <!--<bean class="net.test.extents.TestFourClass"/>-->
