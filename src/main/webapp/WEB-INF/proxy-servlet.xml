@@ -13,18 +13,7 @@
 
     <mvc:annotation-driven/>
     <context:component-scan base-package="net.spring.web">
-        <!--  application.xml ：对应的是系统级别的配置，作用范围是系统上下文  -->
-        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <!-- proxy-servlet.xml  对应的是 controller 级别的配置，作用范围是控制层上下文  -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
-    <!--<tx:annotation-driven/>-->
-    <!--<aop:scoped-proxy/>-->
-    <!--&lt;!&ndash;<bean class="net.init.bean.People">&ndash;&gt;-->
-    <!--&lt;!&ndash;<property name="pid" value="10001"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<property name="pname" value="lichangtong"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;</bean>&ndash;&gt;-->
-    <!--<bean class="net.init.bean.People"/>-->
-    <!--<bean class="net.test.extents.TestFourClass"/>-->
-    <!--&lt;!&ndash;<bean class="net.test.extents.TestFourClass"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<bean class="net.test.extents.TestFourClass"/>&ndash;&gt;-->
-    <!--&lt;!&ndash;<bean class="net.test.extents.TestFourClass"/>&ndash;&gt;-->
 </beans>
