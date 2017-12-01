@@ -93,8 +93,18 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.0</version>
-            <scope>provided</scope>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.eclipse.equinox</groupId>-->
+            <!--<artifactId>org.apache.jasper</artifactId>-->
+            <!--<version>5.5.17.v200806031609</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.eclipse.equinox</groupId>
+            <artifactId>org.apache.jasper</artifactId>
+            <version>5.5.17.v200706111724</version>
+        </dependency>
+
 
     </dependencies>
     <build>
