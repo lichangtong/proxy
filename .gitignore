@@ -5,3 +5,13 @@ out
 gen
 /testProxy.iml
 /READM.md.bak
+/.idea/
+/.idea/compiler.xml
+/.idea/libraries/
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/uiDesigner.xml
+/.idea/artifacts/
+/.idea/inspectionProfiles/
+/.idea/workspace.xml
