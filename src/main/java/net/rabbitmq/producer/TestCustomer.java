@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 public class TestCustomer {
-    public final static String QUEUE_NAME = "rabbitMQ.test";
+    public final static String QUEUE_NAME = "rabbitMQ.testb";
     private final static String exchange = "exchange";
 
     public static void main(String[] args) throws IOException, TimeoutException {
@@ -15,17 +15,17 @@ public class TestCustomer {
         try {
             //创建连接工厂
             ConnectionFactory factory = new ConnectionFactory();
-            factory.setUsername("adminmq");
-            factory.setPassword("adminmq");
-            factory.setVirtualHost("/");
+            factory.setUsername("test");
+            factory.setPassword("test");
+            factory.setVirtualHost("testmqvh");
             factory.setPort(AMQP.PROTOCOL.PORT);
             factory.setHost("127.0.0.1");
             connection = factory.newConnection();
             channel = connection.createChannel();
-            channel.basicQos(1);
-            //channel.exchangeDeclare(exchange, BuiltinExchangeType.DIRECT);
+            //channel.basicQos(1);
+            channel.exchangeDeclare(exchange, BuiltinExchangeType.DIRECT,true);
             //声明要关注的队列
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+            channel.queueDeclare(QUEUE_NAME, true, false, false, null);
 
 
             System.out.println("Customer Waiting Received messages");
@@ -76,7 +76,12 @@ public class TestCustomer {
                     long deliveryTag = envelope.getDeliveryTag();
                     // (process the message components here ...)
                     System.out.println(new String(body)+"----------------------");
-                    getChannel().basicAck(deliveryTag, false);
+                    this.getChannel().basicAck(deliveryTag, false);
+//                    try {
+//                        Thread.sleep(1000);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             });
 
